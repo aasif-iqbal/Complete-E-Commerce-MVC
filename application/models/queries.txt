@@ -1,0 +1,24 @@
+SELECT Pr.product_name,Pr.product_size,Pr.product_short_description,
+Pr.product_mrp,Pv.product_size,Pv.product_color FROM  tbl_main_product
+ AS Pr INNER JOIN `tbl_product_variation` AS pv ON Pr.product_uuid = Pv.product_uuid 
+ WHERE Pr.status=1;
+
+ SELECT Pr.product_name,Pr.product_size,Pr.product_short_description,Pr.product_mrp,
+ Pv.product_size,Pv.product_color,pi.prd_img_1,Pi.prd_img_2,Pi.prd_img_3 FROM 
+ tbl_main_product AS Pr INNER JOIN `tbl_product_variation` AS pv ON 
+ Pr.product_uuid = Pv.product_uuid INNER JOIN tbl_product_images AS Pi 
+ ON Pr.product_uuid = Pi.product_uuid WHERE Pr.status=1;
+
+ SELECT Pr.product_name,Pr.product_size,Pr.product_short_description,Pr.product_mrp,
+ Pv.product_size,Pv.product_color,pi.prd_img_1,Pi.prd_img_2,Pi.prd_img_3 FROM 
+ tbl_main_product AS Pr INNER JOIN `tbl_product_variation` AS pv ON 
+ Pr.product_uuid = Pv.product_uuid INNER JOIN tbl_product_images AS Pi 
+ ON Pr.product_uuid = Pi.product_uuid ORDER BY Pr.product_name;
+
+
+ Best use this:
+ SELECT Pr.product_name,Pr.product_size,Pr.product_short_description,Pr.product_mrp,
+ Pv.product_size,Pv.product_color,pi.prd_img_1,Pi.prd_img_2,Pi.prd_img_3 FROM 
+ tbl_main_product AS Pr INNER JOIN `tbl_product_variation` AS pv ON 
+ Pr.product_uuid = Pv.product_uuid INNER JOIN tbl_product_images AS Pi 
+ ON Pr.product_uuid = Pi.product_uuid GROUP BY Pr.product_name;

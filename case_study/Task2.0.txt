@@ -1,0 +1,83 @@
+================
+1. In Next version
+-  Add createdAt and updatedAt colm in table_registration
+=====================================
+Below code will write on controller.
+
+$jsonData = '[{"cart_id":"20","user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"2a76760a-fa1d-11ed-990c-98460a99789a","variation_uuid":"e694729e-fa20-11ed-990c-98460a99789a","localstorage_id":null,"product_name":"Red T shirt White line","product_image":"edit-646dee4959f84.jpeg","product_size_id":"20a76192-fa23-11ed-990c-98460a99789a","product_size_name":"M","product_color_id":"12","product_color_name":"Purple","product_mrp":"3500","product_selling_price":"2275","product_discount":"35","total_quantity_inStock":"49","item_count":"1","created_at":"2023-05-24 18:28:17.843577","updated_at":"0000-00-00 00:00:00.000000","status":"0"},{"cart_id":"21","user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"b012fa34-ee30-11ed-9ffa-98460a99789a","variation_uuid":"c16ba0d8-f7d1-11ed-b322-98460a99789a","localstorage_id":null,"product_name":"Regular Fit Rib-knit resort shirt","product_image":"w1.jpeg","product_size_id":"1bbb9fc8-ebf9-11ed-b6fa-98460a99789a","product_size_name":"L","product_color_id":"3","product_color_name":"Blue","product_mrp":"2999","product_selling_price":"2849","product_discount":"5","total_quantity_inStock":"7","item_count":"1","created_at":"2023-05-26 11:21:11.421057","updated_at":"0000-00-00 00:00:00.000000","status":"0"}]';
+
+$cartItems = json_decode($jsonData, true);
+
+// Now you can access the data in the $cartItems array
+foreach ($cartItems as $item) {
+    $cartId = $item['cart_id'];
+    $userUuid = $item['user_uuid'];
+    // Retrieve other values as needed
+    // ...
+    
+    // Perform operations with the data
+    echo "Cart ID: $cartId, User UUID: $userUuid\n";
+}
+
+=================
+WE CAN CREATE INVOICE BUTTON ON MY-ORDER SECTION OF CUSTOMER(USER) TO Download AND PRINT INVOICE OF PRODUCT.
+
+
+codeigniter-3-send-email-without-smtp
+
+https://stackoverflow.com/questions/34469344/codeigniter-3-send-email-without-smtp
+
+Download and replace with this:https://github.com/ivantcholakov/codeigniter-phpmailer
+===========================================================================================
+How to Create an eCommerce Website using Free Wordpress Theme? Botiga Online Store Tutorial 2023
+https://www.youtube.com/watch?v=rgH_td252ho
+
+==================================================================
+Capcha
+https://codepen.io/hirensojitra/pen/OJBpVvB
+
+
+
+============= ORDER cancellation ====================
+status code in database
+<!-- 
+0 => (Due to order cancel before shipped) Return without shipping - COD 
+1 => Return without shipping - Online Pay (Customer had paid for order,we need to refund)
+2 => Return & Refund After shipping - COD 
+3 => Return & Refund After shipping - Online 
+4 => NO RETURN
+-->
+
+
+case 1: 
+Order is cancel before payment is made. 
+reason may be change of mind or order by mistake.
+------ IF PAYMENT MODE IS -- COD ------ DO NOTHING
+---------- IF PAYMENT MODE IS -- ONLINE ---- DO SAME AS ORDER-RETURN-REFUND 
+ALSO add/substract Product in tbl_product_variation
+
+
+case 2:
+Order is cancel after receiving order(Package) and payment.
+
+
+
+
+
+========================= How to maintain order history ==========================
+
+- Order history will shown on customer - my order page - your Previous order - in collapse tab or card
+
+============== Product Filter ==================
+https://codyhouse.co/ds/components/info/filter
+
+OTP service
+https://api.msg91.com/apidoc/sendotp/send-otp.php
+
+---------------------------------------------------------------------------------
+Bank Account verification
+- Bank name.
+- Acct no.
+- IFSC code.
+---------------------------------------------------------------------------------
+https://www.cashfree.com/bank-account-verification/?utm_campaign=cf_searchads_vs_highintent_bav&utm_source=googleads&utm_medium=cpc&utm_content=657741291763&utm_term=bank%20account%20number%20verification%20api&utm_adgroup=cf_searchads_vs_highintent_bav_bankaccountverification_e&device=c&utm_matchtype=e&gad=1&gclid=CjwKCAjwkLCkBhA9EiwAka9QRtyuuetOTiRjB2LiENRniM39AyP1qqYy4uEKjqNsIUvMaE10sZfusxoCxqYQAvD_BwE/

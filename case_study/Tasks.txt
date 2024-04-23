@@ -1,0 +1,241 @@
+####### BEST 
+https://mysql.tutorials24x7.com/blog/guide-to-design-database-for-shopping-cart-in-mysql
+####### BEST 
+
+https://my.bluehost.in/hosting/app#/sites/2f7075626c69635f68746d6c2f
+
+
+# Create invantorty management for stocks,price,discount and mrp (Edit-Add variation section) 
+
+# Create view that Admin can view all products in details and all variation also each color variation (use data-table for it)
+
+# create auto-discount system
+
+# management bag -
+- for minimum quantity (below 3 it gv notification  in view and also in admin)
+- user can add maximum 10 products
+- decrement(click) to minimum 1
+- check avilable quantity in database before  incrementing products each time.
+
+# Shipping details - --DONE
+ - address (should be editable)
+ - total items
+ - total price -> Pay now (using Razorpay checkout js)
+
+# add payment gateway(last)-- [DONE] 
+- using Razorpay checkout.js
+https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration/
+//blog for payment gateway
+https://www.codefixup.com/php-razorpay-payment-gateway/
+
+# Add COD(Cash On Delivery) option -- [DONE]
+use captcha 
+https://codepen.io/jhonycertz/pen/pQbaPW
+
+https://dev.to/movingmelody/build-a-captcha-code-generator-using-javascript-2ea6
+
+# js scroll libs
+- https://michalsnik.github.io/aos/
+- https://locomotivemtl.github.io/locomotive-scroll/
+
+# Add Dynamic Color section - to admin panel with color picker
+
+# add review and rating system after product purchase by customer - [DONE]
+
+# Add Shipping table for admin (maintain Shipping history related to payment and Shipping status)
+
+#how to create order table to maintain transaction for each product purchase by customer
+https://stackoverflow.com/questions/17711324/database-structure-for-customer-table-having-many-orders-per-customer-and-many
+
+https://fabric.inc/blog/shopping-cart-database-design/
+
+
+#animation
+https://codepen.io/coopergoeke/pen/xxVeXyJ
+
+https://codepen.io/toshiya-marukubo/details/mdPKpqM  -------- best one 
+=========
+insert and update two different table at one function
+
+# Ratting and Review
+https://leetcode.com/discuss/interview-question/system-design/2019196/How-To-Design-User-Rating-and-Review-System-(Interview-question)
+
+https://phpzag.com/star-rating-system-with-ajax-php-and-mysql
+
+# add varified user (*) -[DONE]
+# one user can comment only one's [NOT REQUIRED]
+
+
+======================================= BUGS ===========================================
+
+1.http://localhost/salt/cart
+# In Cart, if two white shirts of different size and color is added 
+  then, on deleting one shirt , all others shirt also deleted.
+
+=> solution: product have same product_uuid, also check card_id or create unique id for each card items.
+
+=========================
+
+// Assume you have already established a MySQL connection
+$json_string = '[{"user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"c6b04c52-c256-11ed-bf9a-98460a99789a","product_name":"White T-Shirt","product_image":"0_4.jpg","product_quantity":"2","product_size_name":"M","product_color_name":"Yellow","product_selling_price":"1"}]';
+
+// Decode the JSON string to a PHP array
+$cart_items = json_decode($json_string, true);
+
+// Loop through the array to process each cart item
+foreach ($cart_items as $item) {
+    $user_uuid = $item['user_uuid'];
+    $product_uuid = $item['product_uuid'];
+    $product_name = $item['product_name'];
+    $product_image = $item['product_image'];
+    $product_quantity = $item['product_quantity'];
+    $product_size_name = $item['product_size_name'];
+    $product_color_name = $item['product_color_name'];
+    $product_selling_price = $item['product_selling_price'];
+
+    // Process the cart item as needed
+    // For example, you can insert it into a MySQL database:
+    $query = "INSERT INTO cart_items (user_uuid, product_uuid, product_name, product_image, product_quantity, product_size_name, product_color_name, product_selling_price) VALUES ('$user_uuid', '$product_uuid', '$product_name', '$product_image', '$product_quantity', '$product_size_name', '$product_color_name', '$product_selling_price')";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        echo "Error: " . mysqli_error($connection);
+    }
+}
+
+
+# In add to cart
+method 1:
+- after adding product to cart, it will not substract from total quantity store in stocks
+after customer will buy it then it substract from total stocks
+
+method 2:
+- after Add to cart, for 30min it will substract from total stocks(it will give 30 min time to 
+customer to purchase the item) then automatically(using trigger) it will back to total quantity.
+
+# icon - for variation
+https://icons8.com/icons/set/verified
+https://icons8.com/icon/set/popular/ios
+
+
+https://www.furjaden.com/products/military-green-canvas-40l-travel-duffle-duff50
+
+# total Product and its variation
+@Query
+
+SELECT mp.product_name,mp.product_color_name,(pv.product_color_name)AS Variation  FROM tbl_main_product 
+AS mp INNER JOIN tbl_product_variation AS pv ON mp.product_uuid = pv.product_uuid;
+
+product_name	            | product_color_name	| Variation	
+---------------------------------------------------------------------
+Black Shirt Round Coller  | Black               | Blue
+White T-Shirt             | White               | Yellow
+
+
+
+https://stackoverflow.com/questions/6074833/load-and-execute-javascript-code-synchronously
+
+# MySQL, update multiple tables with one query
+https://stackoverflow.com/questions/4361774/mysql-update-multiple-tables-with-one-query
+
+Take the case of two tables, Books and Orders. In case, we increase the number of books in a particular order with Order.ID = 1002 in Orders table then we also need to reduce that the total number of books available in our stock by the same number in Books table.
+
+UPDATE Books, Orders
+SET Orders.Quantity = Orders.Quantity + 2,
+    Books.InStock = Books.InStock - 2
+WHERE
+    Books.BookID = Orders.BookID
+    AND Orders.OrderID = 1002;
+
+
+https://bindassbuddy.in/
+------------------------------------------------------------------------------------
+www.beyours.in - sample website
+-----------------------------------------------------------------------------------
+order_tbl
+
+# ADD OFFCANVAS to size-chart (DONE)
+
+# Product Cancel Possiablity
+1. When user buy product and Cancel it within hours (change his mind)
+    a. if (product is in COD) then ______
+    b. if he/she pays online then ______
+
+Solution : To avoid the above case, User(customer) can Cancel it only at doorsteps(ie. after reciveing it) - Not good practice
+
+level: complex
+2. When User Buy Product and Want to exchange it with different COLOR or Size
+        (Total Amount he paid for the product) + or - (new product) = Final Amount
+
+3. When User Buy Product and Want Money back from website. (REFUND AMOUNT)
+
+ ========================   ChatGPT  =========================
+ There are several possible cases of product returns in an e-commerce website, including:
+
+1. Wrong item delivered: If the customer receives a product that is different from what they ordered, they may return it for the correct item.
+
+2. Damaged or defective product: If the product is received in a damaged or defective condition, the customer may return it for a refund or a replacement.
+
+3. Size or fit issues: If the size or fit of the product is not suitable for the customer, they may return it for a different size or a refund.
+
+4. Change of mind: If the customer changes their mind about the purchase, they may return the product for a refund or exchange, subject to the seller's return policy.
+
+5. Late delivery: If the product is not delivered within the promised timeframe, the customer may choose to return it.
+
+6. Fraudulent activity: In rare cases, customers may try to return products that they did not purchase or return items after they have used them.
+
+It is important for e-commerce websites to have clear and transparent return policies that address these various scenarios to ensure customer satisfaction and protect the interests of the seller as well.
+===========================================   ChatGPT  ====================================
+
+GET Future date-time for hide cancellation button after 15days
+<?php
+// Set timezone to India
+date_default_timezone_set('Asia/Kolkata');
+// Get the current date and time
+$current_datetime = date('Y-m-d H:i:s');
+
+// Get the current date
+$current_date = date('Y-m-d');
+
+// Add 7 days to the current date to get the future date
+$future_date = date('Y-m-d', strtotime($current_date . ' +7 days'));
+
+// Add 7 days and 2 hours to the current datetime to get the future datetime
+//$future_datetime = date('Y-m-d H:i:s', strtotime($current_datetime . ' +7 days +2 hours'));
+
+// Get the day of the week for the future date
+$future_day = date('l', strtotime($future_date));
+  
+    echo "$current_datetime"; // 2023-03-27 14:45:42
+    echo "\n";
+	echo "$future_date"; // 2023-04-03
+	echo "\n";
+	echo "$future_day"; // Monday
+?>
+===========
+On app load first time, cart_session is not called/loaded 
+----------------------------------------------------------------
+Refund  Pay On Delivery(online purchase)
+We will refund any items you return (with labels and tags still attached) within 30 days of purchase, excluding the delivery fee.
+
+Please ensure your bank details are listed in your H&M account so we can refund the balance directly to your bank account. No cash refunds.
+
+Note: Even if the courier accepted card or other non-cash payment upon delivery, we will still refund the balance to your bank account.
+
+Once we have received your return, we will send you an email confirming receipt of the parcel and process your refund.    
+
+
+------------------------------------------------------------------------
+https://notifyjs.jpillora.com/
+https://f3oall.github.io/awesome-notifications/docs/
+
+Product-zoom
+https://codepen.io/justinecodes/pen/xqpZYR
+# OFFCANVAS menu
+https://codepen.io/HICKTER/pen/wbVYxq
+https://codepen.io/jim-kernicky/pen/BarYqxy
+https://codepen.io/vikramsansare/pen/rNOYNbK
+
+
+Price:19$
+https://colorlib.com/wp/template/shopmax/
