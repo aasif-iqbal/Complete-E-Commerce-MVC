@@ -23,16 +23,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// Local-MacBook
+
 // $config['base_url'] = '';
 $config['base_url'] = 'http://localhost:83/salt/'; 
 // Home-wifi-192.168.0.105
-//For local-production`
+// Local - enviroment
 // $config['base_url'] = 'http://192.168.1.14:83/salt/'; 
-
-// ubuntu
-// $config['base_url'] = 'http://localhost:80/salt/';
-
 // Production - enviroment
 // $config['base_url'] = 'https://fifthobject.com/';
 

@@ -29,7 +29,7 @@
             
             <!-- 2 => case: Customer want to Cancel Order After shipping [ If status is SHIPPED, Cancel button will disabled From Customer-side And Return & Refund Button Enabled] - So collect Order at doorsteps by delivery boy (Ask customer for OTP) -> If COD &nbsp;-> No Refund Needed. -->
             <div class='status'>Return and Refund Required</div>
-            <div><span class='status'>2  =></span>Case: Customer want to Cancel Order After shipping [ If status is SHIPPED, Cancel button will disabled From Customer-side And Return & Refund Button Enabled] - So collect Order at doorsteps by delivery boy (Ask customer for OTP) -> If ONLINE PAYMENT DONE OR COD -> (Delivery Boy will just check the Product Quality and update RETURN status).
+            <div><span class='status'>2  =></span> Case: Customer want to Cancel Order After shipping [ If status is SHIPPED, Cancel button will disabled From Customer-side And Return & Refund Button Enabled] - So collect Order at doorsteps by delivery boy (Ask customer for OTP) -> If ONLINE PAYMENT DONE OR COD -> (Delivery Boy will just check the Product Quality and update RETURN status).
             </div>
 
             Check "<a href='http://localhost:83/salt/show-cancellation'>Order cancellection" </a> section to know How Customer want to recive Refund Amount<br>

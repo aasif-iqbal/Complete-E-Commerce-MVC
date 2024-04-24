@@ -104,7 +104,7 @@
     <?php
     if(isset($order_details)){
       $order_count = count($order_details);
-      for($i=0; $i < $order_count; $i++){ ?>
+      for($i=1; $i < $order_count; $i++){ ?>
       <tr>
         <th scope="row"><?= $i ?></th>        
         <td><img src="<?= base_url('').'uploads/'.$order_details[$i]['product_image']; ?>" alt="" style='height:70px;width:60px;'></td>
