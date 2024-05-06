@@ -63,17 +63,6 @@
     </style>
 </head>
 <body>    
-    <?php 
-    // $userLoginData = $this->session->userdata('userLoginData');
-    // var_dump($customerInfo[0]);
-    ?>
-    <?php  
-    // echo("<pre>");
-    // print_r(($customerCartItems));
-    //error
-    // https://o515678.ingest.sentry.io/api/4503925471707136/envelope/?sentry_key=faa87b9121f2449cb849f27e4d737f35&sentry_version=7 429
-    ?>
-
 <div class="container">
     <div class="h1 mt-3 mb-3 text-dark" style='text-align: center;'>
             Shopping - Bag
@@ -125,7 +114,7 @@
                         
                     foreach($customerCartItems as $cartItem):
                         $product_arr = $cartItem->product_name;
-                        // print_r($product_arr);
+                        
                     ?>    
 
   <div class="col-md-6">                             
@@ -141,11 +130,7 @@
          
         <span id='return_available'>
             <i class="fa fa-refresh"></i>&nbsp;14 days return available</span>
-      </div>
-      <!-- <div class="cta-section">
-        <div>Rs.2599</div> for new section after product-name
-        <p href="#" class="" id="btn-placeholder">Qty:1</p>
-      </div> -->
+      </div>      
     </div>    
   </div>
     </div>
@@ -206,11 +191,6 @@
     }
 
     </script>
-    <!-- 
-        JSon sample
-    projectInfo_Json = [{"user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"2a76760a-fa1d-11ed-990c-98460a99789a","product_name":"Red T shirt White line","product_image":"edit-646dee4959f84.jpeg","item_count":"1","product_size_name":"M","product_color_name":"Purple","product_selling_price":"2275"},{"user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"b012fa34-ee30-11ed-9ffa-98460a99789a","product_name":"Regular Fit Rib-knit resort shirt","product_image":"w1.jpeg","item_count":"1","product_size_name":"L","product_color_name":"Blue","product_selling_price":"2849"}]
-    -->
-    
         <script>
             var productInfoJSON = `<?= json_encode($customerCartItems_Json) ?>`;
             // customerCartItems is from admin_model
@@ -240,7 +220,7 @@
             function pay_now_online(){
                 //updating pending payment when payment is completed..
                 var options = {
-                    "key": "rzp_test_GS4BjT8wBy1Hdo", 
+                    "key": "rzp_test_key", 
                     "amount": total_amount,  // 100ps ie 1Rs
                     "currency": "INR",
                     "name": "Fifth Object",

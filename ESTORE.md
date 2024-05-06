@@ -17,7 +17,7 @@
 ![](screenshots_estore/Product_detail.png)
 
 ## 7. Product Selection - Size (M) - Avilable Color - (Red)
-![](screenshots_estore/5_select_Red_m_size.png)
+![](screenshots_estore/M_size_not.png)
 
 ## 8. Add to shopping bag
 ![](screenshots_estore/add_cart.png)
@@ -28,12 +28,9 @@
 ## 9. Registration Page - ( For first time user visit )
 ![](screenshots_estore/24_register.png)
 
-
 ## 10. Checkout Page - Address & Other Details
 ![](screenshots_estore/Change_Shopping_bag.png)
 
-
-<!-- ![](screenshots_estore/19_payment.png) -->
 ## 11. Online payment - Choose Payment Methods
 ![](screenshots_estore/payment_done_ss.png)
 

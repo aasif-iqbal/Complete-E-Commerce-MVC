@@ -239,3 +239,9 @@ https://codepen.io/vikramsansare/pen/rNOYNbK
 
 Price:19$
 https://colorlib.com/wp/template/shopmax/
+
+
+<!-- 
+        JSon sample
+    projectInfo_Json = [{"user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"2a76760a-fa1d-11ed-990c-98460a99789a","product_name":"Red T shirt White line","product_image":"edit-646dee4959f84.jpeg","item_count":"1","product_size_name":"M","product_color_name":"Purple","product_selling_price":"2275"},{"user_uuid":"988f64b4-bc4a-11ed-bb06-98460a99789a","product_uuid":"b012fa34-ee30-11ed-9ffa-98460a99789a","product_name":"Regular Fit Rib-knit resort shirt","product_image":"w1.jpeg","item_count":"1","product_size_name":"L","product_color_name":"Blue","product_selling_price":"2849"}]
+    -->

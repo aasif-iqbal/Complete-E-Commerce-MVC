@@ -286,6 +286,8 @@ left: 100%;
         <!-- wishlist -->
     <!-- <a href="#" class="btn btn-light btn-lg active" role="button" aria-pressed="true"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;&nbsp;WISHLIST</a> -->
     
+    <!-- <small class='text-danger'>{$isColorAvilable} - Size is Not Available</small> -->
+    <!-- <small class='text-danger'>{$isSizeAvilable} - Size is Not Available</small> -->
     <?php if($userLoginData){ ?>
       <!-- SHOW WHEN USER IS LOGIN -->
     <button  class="btn btn-outline-dark btn-block btn-lg" onclick="checkProductQuantityAviability();"><span class="icon-shopping-bag"></span>  ADD</button>

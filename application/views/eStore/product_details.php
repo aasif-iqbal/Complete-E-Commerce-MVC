@@ -290,6 +290,7 @@ figure:hover+span {
     to stop or prevent this we have to use  event.preventDefault() in our function
     
  -->
+ 
     <a href="" 
       class="btn btn-outline-dark btn-block btn-lg" 
       id="add_to_cart" 

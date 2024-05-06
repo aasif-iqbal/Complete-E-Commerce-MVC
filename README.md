@@ -1,14 +1,13 @@
 # Complete-E-Commerce-MVC
 Complete ecommerce application from Add-to-cart to Product Delivery at customer doorstep.
 
-To Generate Payment API - Razorpay
-https://dashboard.razorpay.com/app/website-app-settings/api-keys
+To Generate Payment API - [Razorpay](
+https://dashboard.razorpay.com/app/website-app-settings/api-keys)
 
-Hosting client:
-https://my.bluehost.in/hosting/app#/
+Hosting service: [Bluehost](
+https://my.bluehost.in/hosting/app#/)
 
-Delivery client:
-https://www.xpressbees.com/
+Delivery service: [Xpressbees](https://www.xpressbees.com/)
 
 PHP Version 7.4.1
 

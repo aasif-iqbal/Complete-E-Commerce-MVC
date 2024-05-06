@@ -150,8 +150,8 @@
                         </p>
                         
                         <!-- if user login, Then redirect to payment pg -->
-                            <a href="<?= base_url('shipping');?>" class="btn btn-dark">Continue To Checkout</a>
-                            <a href="<?= base_url('/');?>" class="btn btn-dark float-right">Continue To Payment</a>
+                            <a href="<?= base_url('shipping');?>" class="btn btn-dark btn-block btn-sm pt-2">Continue To Checkout</a>
+                            <!-- <a href="<?= base_url('/');?>" class="btn btn-dark float-right">Continue To Payment</a> -->
                         <?php } else { ?>                                                
                         <!-- if user Not login, Then redirect to login pg -->
                         <a href="<?= base_url('login');?>" class="btn btn-primary">Checkout</a>
